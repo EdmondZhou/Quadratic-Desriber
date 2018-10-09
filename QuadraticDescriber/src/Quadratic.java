@@ -1,4 +1,3 @@
- 
 public class Quadratic {
 	public static double square(double num) {
 		double answer;
