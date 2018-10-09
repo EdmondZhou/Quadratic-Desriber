@@ -86,6 +86,18 @@ public class Quadratic {
 		return answer;
 	}
 	public static String quadrDescriber(double a, double b, double c) {
+		String Description1 = "Description of the graph of";
+		String Description2 = "y = " + a + "x^2" + b + "x" +c;
+		if (a > 1) {
+			String Open = "Open: Up";
+		}
+		if (a < 1) {
+			String Open = "Open: Down";
+		}
+		if (a == 0) {
+			throw new IllegalArgumentException ("This is not a parabola.");
+		}
+		String AxisOfSym = 
 		
 	}
 }
