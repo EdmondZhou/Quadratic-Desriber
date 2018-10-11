@@ -9,5 +9,6 @@ import java.util.*;
 	System.out.println("c");
 	double c = userInput.nextDouble();
 	userInput.close();
+	System.out.println
 		}
 	}	
