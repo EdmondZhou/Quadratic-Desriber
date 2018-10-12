@@ -1,3 +1,11 @@
+/* 
+ * This class will do all the calculations.
+ * Edmond Zhou
+ * 10/11/2018
+ */
+
+
+
 public class Quadratic {
 	public static double square(double num) {
 		double answer;
@@ -43,7 +51,8 @@ public class Quadratic {
 			return root = 0;
 		}
 		if (a < 0) {
-			throw new IllegalArgumentException ("The square root of an negative number is imaginary.");
+			throw new IllegalArgumentException (""
+					+ "");
 		}
 		if (a > 0) {
 			root = a / 2;
@@ -64,7 +73,7 @@ public class Quadratic {
 		double root1;
 		double root2;
 		if (discriminant(a, b, c) < 0) {
-			answer = "no real roots";
+			answer = "None";
 		}
 		if (discriminant(a, b, c) > 0) {
 			root1 = round2((-b + sqrt(discriminant(a,b,c)))/(2 * a));
@@ -86,18 +95,24 @@ public class Quadratic {
 		return answer;
 	}
 	public static String quadrDescriber(double a, double b, double c) {
-		String Description1 = "Description of the graph of";
-		String Description2 = "y = " + a + "x^2" + b + "x" +c;
-		if (a > 1) {
-			String Open = "Open: Up";
+		String Description = "Description of the graph of \n" + "y = " + a + " x^2 + " + b + " x + " +c + "\n\n";
+		String Open = "Open: \n";
+		if (a >= 1) {
+			Open = "Open: Up \n";
 		}
 		if (a < 1) {
-			String Open = "Open: Down";
+			Open = "Open: Down \n";
 		}
 		if (a == 0) {
-			throw new IllegalArgumentException ("This is not a parabola.");
+			Open = "Not a parabola. This is a straight line. \n";
 		}
-		String AxisOfSym = 
+		double xvertex = -b/ (2 * a);
+		double yvertex = a * (xvertex * xvertex) + b  *xvertex + c;		
 		
+		String AxisofSym = "Axis of Symmetry: " + xvertex + "\n";
+		String Vertex = "Vertex: (" + xvertex + ", " + yvertex + ")\n";
+		String xintercepts = "x-intercept(s): " + quadForm(a,b,c) + "\n";
+		String yintercept = "y-intercept: " + c + "\n";
+		return Description + Open + AxisofSym + Vertex + xintercepts + yintercept;
 	}
 }
